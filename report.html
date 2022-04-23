@@ -14627,55 +14627,6 @@ Percentage of individuals making more than $50,000: 24.78439697492371%
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;&lt;=50K&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;50K&#39;</span><span class="p">],</span>
-                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0        0
-1        0
-2        0
-3        0
-4        0
-        ..
-45217    0
-45218    0
-45219    0
-45220    0
-45221    1
-Name: income, Length: 45222, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
@@ -14901,7 +14852,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <pre><code>1) This model is used in spam filters
 2) It is fast, it works well with high dimensions data (as in this case)
 3) It doesn't perform well when the features are not independents amongs them, it's doesn't perform well if data are not normal distributed
-4) This problem has 103 features (high dimensions). This model works well in a binary classification problem (as in this case) and is simple to implement (doesn't need complex hyperparameters)
+4) This problem has 103 features (high dimensions). This model works well in a binary classification problem (as in this case) and it is simple to implement (it doesn't need complex hyperparameters)
 
 </code></pre>
 <p>B) Ensemble Methods</p>
@@ -14909,7 +14860,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <pre><code>1) Netflix Challenges and several kaggle competions as the winner model
 2) It perform well in high dimensions data, It combines models that perform well in this kind of categorical and continuous data and it has high predictive accuracy
 3) It is not simple to determine the correct hyperparameters, It is slow. 
-4) I am thinking of a model that can work well in two situations: high dimensions and sparse data(due to one hot encoder) I've studied in the course of machine learning in udacity (ud262) that this method is the best one to handle overshooting, a problem that we have here and also is the method that gives the best predictive accuracy amongs the seven models presented.
+4) I am thinking of a model that can work well in two situations: high dimensions and sparse data(due to one hot encoder) I've studied in the course of machine learning in udacity (ud262) that this method is the best one to handle overfitting, a problem that we have here and also is the method that gives the best predictive accuracy amongs the seven models presented.
 
 </code></pre>
 <p>C) Support Vector Machines</p>
@@ -14924,7 +14875,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <ul>
 <li>K-Nearest Neighbors doesn't perform well in high dimensions</li>
 <li>Decision Trees are already considered in ensemble methods (I think that if random forest performs well for example, it is not necessary to try with decision tree (Random Forest with only 1 tree))</li>
-<li>Logistic Regression, SGDC and naive bayes do not perform well (compared to the other ones) but I decided to naive bayes, because it is not computationally expensive and I wanted to see in situations where I have to solve a problem similar to this one in a computer with not good system resources how it behaves.  </li>
+<li>Logistic Regression, SGDC and naive bayes do not perform well (compared to the other ones) but I decided to naive bayes, because it is not computationally expensive and I wanted to see how it would behave in situations where I have to solve a problem similar to this in a computer with not good system resources .  </li>
 </ul>
 <p>References:</p>
 <ul>
@@ -14956,20 +14907,6 @@ In the code block below, you will need to implement the following:</p>
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">fbeta_score</span><span class="p">,</span> <span class="n">accuracy_score</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15184,7 +15121,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Answer: </strong> The most appropiate is to use ensemble methods, specially Gradient boosting which was the one that gave the higher f-score on testing when 100% of the training data was used (also for 1% and 10%). I was not sure if I had to take gradient boosting or support vector machines because the f-score is close between them, but after check the time that took both models to training, It is clear that gradient boosting is the faster one. The fact that in the training set is almost the same that SVM in terms of accuracy, but different in test set indicates that this algorithm performs well when there are many features (as in this case) because it works well when overshooting is a clear risk (as in this case due to the high numbers of features)</p>
+<p><strong>Answer: </strong> The most appropiate is to use ensemble methods, specially Gradient boosting which was the one that gave the higher f-score on testing when 100% of the training data was used (also for 1% and 10%). I was not sure if I had to take gradient boosting or support vector machines because the f-score is close between them, but after check the time that took both models to training, it is clear that gradient boosting is the faster one. The fact that in the training set is almost the same that SVM in terms of accuracy, but different in test set indicates that this algorithm performs well when there are many features (as in this case) because it works well when overfitting is a clear risk (as in this case due to the high numbers of features)</p>
 
 </div>
 </div>
@@ -15202,7 +15139,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Answer: </strong> Dear CharityML:</p>
 
-<pre><code>There is a proverb that says: Two heads are better than one. If we have the posibility to combine different algorithms in order to get better result why not to take it? That's what ensemble methods do. In this problem, gradient boosting is the most appropiate to classifiy donors. This model take the data and search for the feature who can give more information about the classification, then follow in the same way generating a decision tree, after that if a register is not classified well it will try to do it well now, asign it a weight of importance in the next iteration, so it will focus to do it better in those who fail previously. When the model is already trained you could give a prediction of the new register evaluating with the decision trees obtained in the process explanined previously. </code></pre>
+<pre><code>There is a proverb that says: Two heads are better than one. If we have the posibility to combine different algorithms in order to get better result why not to take it? That's what ensemble methods do. In this problem, gradient boosting is the most appropiate to classifiy donors. This model take the data and search for the feature who can give more information about the classification, then follow in the same way generating a decision tree, after that if an instance is not classified well it will try to do it well now, assigning it a weight of importance in the next iteration, so it will focus to do it better in those who fail previously. When the model is already trained you could obtain a prediction of the new instance from the decision trees obtained in the process explanined previously. </code></pre>
 
 </div>
 </div>
@@ -15369,7 +15306,7 @@ Final F-score on the testing data: 0.7478
 <p><strong>Answer:</strong></p>
 <p>The most important have to be the ones related to money: Capital gain, and capital loss
 The next 2 I think it has to do with education: education and education-num
-The last one has to do with the kind of job occupation: There are jobs thatare best paid than other ones</p>
+The last one has to do with the kind of job occupation: There are jobs that are best paid than other ones</p>
 <p>1)Capital Gain
 2)Capital Loss
 3)Education
